@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sayani Thakur — Industry R&D | Process Scale‑Up</title>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body class="font-[Inter] bg-slate-50 text-slate-900">
+<header class="bg-gradient-to-r from-sky-400 to-purple-500 text-white py-10 text-center">
+<h1 class="text-4xl font-bold">Sayani Thakur</h1>
+<p class="mt-2">Senior Research Scientist • Reliance Industries Limited • Jamnagar, India</p>
+<p class="text-sm mt-1">AIChE 2025 — Boston • Scan to connect</p>
+</header>
+<main class="max-w-3xl mx-auto py-10 px-4 space-y-6">
+<section>
+<h2 class="text-2xl font-semibold mb-2">About</h2>
+<p>Chemical engineer with 10+ years’ experience in catalytic process development, scale‑up, and techno‑economic evaluation for hydrogen, bio‑methanol, and circular plastics. Passionate about translating lab innovations into reliable, cost‑competitive commercial processes.</p>
+</section>
+<section>
+<h2 class="text-2xl font-semibold mb-2">Contact</h2>
+<ul class="space-y-1">
+<li>Email: <a href="mailto:sayanithakur23@gmail.com" class="text-sky-600 underline">sayanithakur23@gmail.com</a></li>
+<li>Phone: <a href="tel:+918100336909" class="text-sky-600 underline">+91 81003 36909</a></li>
+<li>LinkedIn: <a href="https://www.linkedin.com/in/sayani-thakur-307153a9" class="text-sky-600 underline">linkedin.com/in/sayani-thakur-307153a9</a></li>
+</ul>
+</section>
+<section>
+<h2 class="text-2xl font-semibold mb-2">QR Codes</h2>
+<p>Generate QR for your page and contact card:</p>
+<div class="grid md:grid-cols-2 gap-6">
+<div>
+<label class="block font-medium mb-1">Page URL</label>
+<input id="siteUrl" type="url" value="https://sayani231191.github.io/" class="w-full border rounded p-2 mb-2"/>
+<button id="genBtn" class="bg-sky-600 text-white rounded px-3 py-1 mr-2">Generate</button>
+<button id="dlBtn" class="border rounded px-3 py-1">Download</button>
+<div id="qrcode" class="mt-3"></div>
+</div>
+<div>
+<button id="genVCardQR" class="bg-indigo-600 text-white rounded px-3 py-1">Generate vCard QR</button>
+<button id="dlVCardQR" class="border rounded px-3 py-1 ml-2">Download</button>
+<div id="qrcodeVCard" class="mt-3"></div>
+</div>
+</div>
+</section>
+</main>
+<script>
+function makeQR(el, text){ el.innerHTML=''; new QRCode(el,{text,width:200,height:200}); }
+document.getElementById('genBtn').onclick=function(){ makeQR(document.getElementById('qrcode'),document.getElementById('siteUrl').value); }
+function buildVCard(){ return ['BEGIN:VCARD','VERSION:3.0','N:Thakur;Sayani;;;','FN:Sayani Thakur','TITLE:Senior Research Scientist (Refining R&D)','ORG:Reliance Industries Limited','TEL:+918100336909','EMAIL:sayanithakur23@gmail.com','END:VCARD'].join('\n'); }
+document.getElementById('genVCardQR').onclick=function(){ makeQR(document.getElementById('qrcodeVCard'),buildVCard()); }
+</script>
+</body>
+</html>
